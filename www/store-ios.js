@@ -926,7 +926,9 @@ store.verbosity = 0;
                 protectCall(error, "load.error", InAppPurchase.prototype.ERR_LOAD, message);
             };
             InAppPurchase._productIds = productIds;
-            exec("load", [ productIds ], loadOk, loadFailed);
+            setTimeout(function(){
+              exec("load", [ productIds ], loadOk, loadFailed);
+            }, 0);
         }
     };
     InAppPurchase.prototype.finish = function(transactionId) {
